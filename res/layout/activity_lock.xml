@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <android.gesture.GestureOverlayView
+                android:id="@+id/gOvers"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/time"
+                android:gestureColor="#00FF00"
+                android:gestureStrokeType="multiple"
+                android:uncertainGestureColor="#FF0000" >
+
+            </android.gesture.GestureOverlayView>
+
+            <TextView
+                android:id="@+id/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/date"
+                android:layout_below="@+id/date"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5sp"
+                android:text="0% Battery"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="#ffffff"
+                android:textSize="54sp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/time"
+                android:gravity="center"
+                android:text="0/0/0000"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/texts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/battery"
+                android:layout_alignBottom="@+id/battery"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/g"
+                android:layout_marginRight="7dp"
+                android:text="Pi Locker"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+              <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#4D000000" />
+        </RelativeLayout>
+        
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,282 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F0F0F0" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="574dp" >
+
+            <TextView
+                android:id="@+id/textViewx"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="  General"
+                android:background="#ffffff"
+                android:gravity="center"
+                
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textViewx"
+                android:layout_margin="5dp" />
+
+            <Button
+                android:id="@+id/screentext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/background"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" Set lockscreen text"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/screentextcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/screentext"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" Set text color"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/screentextcolor"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" Help"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/help"
+              
+                android:text=" About"
+                     android:background="#ffffff"
+                android:gravity="center"
+                
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView3"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" About Pi Locker"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/aboutpi"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/about"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" About Pi Developers"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/donate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/aboutpi"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" Donate to us "
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/start"
+                android:layout_alignBottom="@+id/start"
+                android:layout_alignLeft="@+id/start"
+                android:layout_marginLeft="43dp"
+                android:text="Toggle Pi Locker"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/background"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView1"
+                android:layout_marginTop="21dp" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Hide" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Show" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/radioGroup1"
+                android:layout_marginTop="25dp"
+              
+                android:text="  Settings"
+                      android:background="#ffffff"
+                android:gravity="center"
+                
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/start"
+                android:layout_below="@+id/start" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox1"
+                android:layout_alignBottom="@+id/checkBox1"
+                android:layout_alignLeft="@+id/textView1"
+                android:text="Secret Emergency unlock"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/background"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/screentext"
+                android:layout_below="@+id/textView2"
+                android:layout_margin="5dp"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text=" Set Background"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="743325dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkBox1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text=" security"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView6"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text="   Set password"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/set"
+                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text="   Set PIN"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/background"
+                android:layout_below="@+id/button1"
+                                android:background="#F0F0F0"
+                android:gravity="center_vertical"
+                android:text="   Reset PIN/password"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/TextView1"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/button2"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="  StatusBar"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

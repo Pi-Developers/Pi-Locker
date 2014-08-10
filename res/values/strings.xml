@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pi Locker</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_lock">Lock</string>
+    <string name="title_activity_help">Help</string>
+    <string name="about">
+Pi Locker is a simple and fast locksreen replacement with Customizability and Smart Gestures.
+\n\n
+Features :
+\n
+\n-Clean interface
+\n-Light weight
+\n-Ram friendly
+\n-Smooth on low end devices
+\n-Customizable text
+\n-Customizable text color
+\n-Battery percent
+\n-Lockscreen Gestures
+\n-Changeable background image
+\n-Changeable background color
+\n-Emergengy unlock
+\n-Show/Hide statusbar
+\n-Pin security
+\n-Password security
+
+
+\n\n\n
+ChangeLog :
+\n\n
+v3.0
+\n-Fixed onboot start
+\n-Changed font size
+\n-Added Pin and password Security
+\n-Fixed Home button in some devices
+\n-Changed Battery and custom text position
+\n-increased default background transperancy
+\n-Code Cleaned
+\n-Removed unused recources
+\n-added text limiter in password
+</string>
+    <string name="title_activity_pin">MainActivity</string>
+
+</resources>
