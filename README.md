@@ -35,8 +35,7 @@ Features :
 
 Downloads :
 
-  https://play.google.com/store/apps/details?id=pidevelopers.pilockerstable
-
+ https://play.google.com/store/apps/details?id=com.pilockerstable
 
 XDA Thread :
 
