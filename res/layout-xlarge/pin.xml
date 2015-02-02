@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activityRoot"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#59000000" >
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignBaseline="@+id/b4"
+        android:layout_alignBottom="@+id/b4"
+        android:layout_alignRight="@+id/b2"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="5"
+        android:textColor="#ffffff"
+        android:textSize="45sp"
+                          android:fontFamily="sans-serif-thin"
+/>
+
+    <Button
+        android:id="@+id/b6"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignBaseline="@+id/b5"
+        android:layout_alignBottom="@+id/b5"
+        android:layout_alignRight="@+id/b3"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="6"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b8"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignBaseline="@+id/b7"
+        android:layout_alignBottom="@+id/b7"
+        android:layout_alignLeft="@+id/b5"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="8"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b9"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_above="@+id/b0"
+        android:layout_alignLeft="@+id/b6"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="9"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <EditText
+        android:id="@+id/pin"
+        android:layout_width="560dp"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_alignRight="@+id/b3"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="5dp"
+        android:background="#00000000"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="numberPassword"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Enter Your Pin"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="60sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_above="@+id/b4"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/pin1"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="2"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignBaseline="@+id/b2"
+        android:layout_alignBottom="@+id/b2"
+        android:layout_marginLeft="23dp"
+        android:layout_toRightOf="@+id/b2"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="3"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignLeft="@+id/b9"
+        android:layout_alignTop="@+id/b0"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="X"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/pin"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="33dp"
+        android:layout_toLeftOf="@+id/b2"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="1"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_below="@+id/b1"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="4"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignLeft="@+id/b4"
+        android:layout_below="@+id/b4"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="7"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/b0"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/b8"
+        android:layout_marginTop="37dp"
+        android:layout_toRightOf="@+id/b1"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="0"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignBaseline="@+id/b0"
+        android:layout_alignBottom="@+id/b0"
+        android:layout_alignLeft="@+id/b7"
+        android:background="@drawable/selector"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Unlock"
+        android:textColor="#ffffff"
+        android:textSize="35sp" />
+
+</RelativeLayout>

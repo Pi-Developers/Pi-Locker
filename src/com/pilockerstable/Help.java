@@ -1,87 +1,71 @@
 package com.pilockerstable;
 
-import android.app.Activity;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 
-public class Help extends Activity {
 
-	ImageView imghelp;
-    Button next ;
-	int x=1;   
-	
+public class Help extends ActionBarActivity {
+
+    Button btn;	
+    android.support.v7.app.ActionBar actionbar;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
 		setContentView(R.layout.activity_help);
 		
-		imghelp = (ImageView) findViewById(R.id.imghelp);	
-		next =(Button)  findViewById(R.id.nextbutton);
+		FontsOverride.setDefaultFont(this, "DEFAULT", "Roboto-Regular.ttf");
+		FontsOverride.setDefaultFont(this, "MONOSPACE", "Roboto-Regular.ttf");
+		FontsOverride.setDefaultFont(this, "SANS_SERIF", "Roboto-Regular.ttf");
+
 		
-	   next.setOnClickListener(new OnClickListener() {
+		actionbar = getSupportActionBar();
+		actionbar.setBackgroundDrawable(new ColorDrawable(0xff00BCD4));
+		actionbar.setDisplayShowTitleEnabled(false);
+		actionbar.setDisplayShowTitleEnabled(true);
+		
+		actionbar.setTitle(Html.fromHtml("<font color='#ffffff'> <b> Pi Locker guide </b> </font>"));
+
+		btn = (Button) findViewById(R.id.button1);
+		
+		btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				x++;
-				
-				
-				if (x==2)
-				{
-					imghelp.setImageResource(R.drawable.two);
-				}
-				
-				if (x==3)
-				{
-					imghelp.setImageResource(R.drawable.three);
-				}
-				
-				if (x==4)
-				{
-					imghelp.setImageResource(R.drawable.four);
-				}
 
-				if (x==5)
-				{
-					imghelp.setImageResource(R.drawable.five);
-				}
+
+				finish();
 				
-				if (x==6)
-				{
-					imghelp.setImageResource(R.drawable.six);
-				}
 				
-				if (x==7)
-				{
-					imghelp.setImageResource(R.drawable.seven);
-				}
-				
-				if (x==8)
-				{
-					imghelp.setImageResource(R.drawable.eight);
-				}
-				
-				if (x==9)
-				{
-					imghelp.setImageResource(R.drawable.nine);
-					next.setText("Finish");
-					
-				}
-				
-				if (x==10)
-				{
-					finish();
-				}
-					
 				
 			}
 		});
-		 
 		
-		 
+		
+		
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
 	
+		return super.onOptionsItemSelected(item);
+	}
 }
+

@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pilockerstable"
-    android:versionCode="3"
-    android:versionName="3.0" >
+    android:versionCode="10"
+    android:versionName="5.0.3" >
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="8"
+
+        android:targetSdkVersion="21" />
+
+     <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -22,13 +29,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -36,19 +41,24 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat" >
+        
         <activity
             android:name="com.pilockerstable.MainActivity"
-            android:excludeFromRecents="true"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:logo="@drawable/ic_launcher"
+            android:theme="@style/Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        
         <activity
             android:name="com.pilockerstable.Lock"
+            android:configChanges="orientation|keyboardHidden"
             android:excludeFromRecents="true"
             android:label="@string/title_activity_lock"
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
@@ -56,36 +66,79 @@
             <intent-filter>
             </intent-filter>
         </activity>
+        
+        
+        <activity
+            android:name=".Help"
+            android:logo="@drawable/ic_launcher"
+            android:theme="@style/Theme.AppCompat" >
 
-        <service
-            android:name="com.pilockerstable.Servicelock"
-            android:icon="@drawable/ic_launcher" >
-        </service>
+        </activity>
+        
+        
+        
+        <activity
+            android:name="com.pilockerstable.PinActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/title_activity_pin"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" >
+        </activity>
 
         <receiver
-            android:name="com.pilockerstable.Receiver"
+            android:name="com.pilockerstable.LockBoot"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name="com.pilockerstable.LockerService$mReceiver"
+            android:enabled="true" >
+        </receiver>
+        <receiver
+            android:name="com.pilockerstable.DeviceAdmin"
+            android:description="@string/device_admin_description"
+            android:label="@string/device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLE_REQUESTED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_CHANGED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_EXPIRING" />
+                <action android:name="android.app.action.ACTION_PASSWORD_FAILED" />
+                <action android:name="android.app.action.ACTION_PASSWORD_SUCCEEDED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.pilockerstable.LockerService"
+            android:icon="@drawable/ic_launcher"
+            android:process=":background" >
+        </service>
 
         <activity
-            android:name="com.pilockerstable.Help"
-            android:excludeFromRecents="true"
-            android:label="@string/title_activity_help"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            android:name="com.almas.ShortcutSettings"
+            android:logo="@drawable/ic_launcher"
+            android:theme="@style/Theme.AppCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pilockerstable.MainActivity" />
         </activity>
         <activity
-            android:name="com.pilockerstable.PinActivity"
-            android:excludeFromRecents="true"
-            android:label="@string/title_activity_pin"
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
-            android:windowSoftInputMode="adjustResize" >
+            android:name="com.almas.PickerApp"
+            android:logo="@drawable/ic_launcher"
+            android:theme="@style/Theme.AppCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pilockerstable.MainActivity" />
         </activity>
-
-        <intent-filter>
-        </intent-filter>
     </application>
 
 </manifest>

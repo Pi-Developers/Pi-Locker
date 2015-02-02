@@ -2,8 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/r0"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-     >
+    android:layout_height="fill_parent" >
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -14,81 +13,104 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" >
 
-            <android.gesture.GestureOverlayView
-                android:id="@+id/gOvers"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/time"
-                android:gestureColor="#00FF00"
-                android:gestureStrokeType="multiple"
-                android:uncertainGestureColor="#FF0000" >
+            <View
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="#80000000" />
 
-            </android.gesture.GestureOverlayView>
-
-            <TextView
-                android:id="@+id/battery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/date"
-                android:layout_below="@+id/date"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5sp"
-                android:text="0% Battery"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ffffff"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/time"
+            <com.pilockerstable.PanelSwitcher
+                android:id="@+id/panelSwitcher1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:text="00:00"
-                android:textColor="#ffffff"
-                android:textSize="54sp" />
+                android:layout_marginTop="30dp" >
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textColor="#ffffff"
+                    android:textSize="54sp"
+                />
+
+                <com.almas.ShortcutView
+                    android:id="@+id/shortcutView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center" />
+            </com.pilockerstable.PanelSwitcher>
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/time"
-                android:gravity="center"
-                android:text="0/0/0000"
-                android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="22dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="Carrier"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <android.gesture.GestureOverlayView
+                android:id="@+id/gestureOverlayView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignTop="@+id/date"
+                android:gestureColor="#ffffff"
+                android:gestureStrokeType="multiple"
+                android:gestureStrokeWidth="7.0"
+                android:uncertainGestureColor="#ffffff" >
+            </android.gesture.GestureOverlayView>
 
             <TextView
                 android:id="@+id/texts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/battery"
-                android:layout_alignBottom="@+id/battery"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/g"
-                android:layout_marginRight="7dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-thin"
                 android:text="Pi Locker"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="0% Battery"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-              <View
-        android:id="@+id/view1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="#4D000000" />
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/panelSwitcher1"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:text="0-0-0000"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="normal" />
         </RelativeLayout>
-        
     </TableRow>
 
 </TableLayout>

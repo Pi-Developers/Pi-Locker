@@ -1,289 +1,284 @@
 package com.pilockerstable;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.text.InputFilter;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.TableLayout;
 import android.widget.Toast;
+import android.widget.LinearLayout.LayoutParams;
 
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+@SuppressLint("SimpleDateFormat")
 public class PinActivity extends Activity {
+
 	SharedPreferences sec;
 	EditText unlock;
-	Button button1,button2;
-	TextView TextView1,battery, Date, Time, text;
-	int X = 0;
+	Button thelock, no1, no2, no3, no4, no5, no6, no7, no8, no9, no0, back;
+	// int X = 0;
 	private Handler mainhandler;
 	private HomeKeyLocker mHomeKeyLocker;
-	String  txt, img, color, colorbg;
-	Bitmap bmImg;
-	int col, colbg;
-    SharedPreferences spfs;
-	@SuppressLint("HandlerLeak")
+	String unlocker, camera, lock, browser, pin, pkg, sv, img;
+	Runnable runnable;
+	static Bitmap bmImg;
+	static TableLayout r0;
+	SharedPreferences sse;
+
+	@SuppressLint({ "HandlerLeak", "SimpleDateFormat" })
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
-		
 
-		sec = PreferenceManager.getDefaultSharedPreferences(this);
-		String XYZ = sec.getString("XYZ", "");
-		final String pass = sec.getString("pass", "");
-		final String pin = sec.getString("pin", "");
+		stopService(new Intent(PinActivity.this, LockerService.class));
 		loadlock();
-		
-		if (XYZ.equals("true")) {
-			requestWindowFeature(Window.FEATURE_NO_TITLE);
-			getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-			getWindow().addFlags(
-					WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-		} else {
-			requestWindowFeature(Window.FEATURE_NO_TITLE);
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-			}
 
-		
-		if(!pass.equals("") ){
-			setContentView(R.layout.password);
-			unlock = (EditText) findViewById(R.id.pass);
-			X++;
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+
+	
 			
-		}
-		
-		else if (!pin.equals("")){
-			setContentView(R.layout.pin);
-			unlock = (EditText) findViewById(R.id.pin);
-			}
-		
-		
-		button1 = (Button)findViewById(R.id.button1);
-		button2 = (Button)findViewById(R.id.button2);
-		TextView1 = (TextView)findViewById(R.id.textView1);
-		battery = (TextView) findViewById(R.id.battery);
-		Date = (TextView) findViewById(R.id.date);
-		text = (TextView) findViewById(R.id.texts);
-		mHomeKeyLocker = new HomeKeyLocker();
-		mHomeKeyLocker.lock(this);
-		
-		
-		final View activityRootView = findViewById(R.id.activityRoot);
-		activityRootView.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-		    @Override
-		    public void onGlobalLayout() {
-		        int heightDiff = activityRootView.getRootView().getHeight() - activityRootView.getHeight();
-		        if (heightDiff < 100 ) {
-
-		        mHomeKeyLocker.lock(PinActivity.this);
-		        
-		        }
-		     }
-		});
-
-		
-		unlock.setFilters(new InputFilter[] { new InputFilter.LengthFilter(12) });
-		unlock.setOnTouchListener(new View.OnTouchListener(){
-		    public boolean onTouch(View view, MotionEvent motionEvent) {                                                       
-
-		    	mHomeKeyLocker.unlock();
-		    	
-		    	getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);                
-		         return false;
-		    }
-		});
-		
-
-		
-		button1.setOnClickListener(new OnClickListener() {
 			
+
+		setContentView(R.layout.pin);
+
+		FontsOverride.setDefaultFont(this, "DEFAULT", "Roboto-Thin.ttf");
+		FontsOverride.setDefaultFont(this, "MONOSPACE", "Roboto-Thin.ttf");
+		FontsOverride.setDefaultFont(this, "SANS_SERIF", "Roboto-Thin.ttf");
+
+		sse = PreferenceManager.getDefaultSharedPreferences(this);
+
+		img = sse.getString("img", "");
+
+		unlock = (EditText) findViewById(R.id.pin);
+		thelock = (Button) findViewById(R.id.button1);
+		back = (Button) findViewById(R.id.back);
+
+		no1 = (Button) findViewById(R.id.b1);
+		no2 = (Button) findViewById(R.id.b2);
+		no3 = (Button) findViewById(R.id.b3);
+		no4 = (Button) findViewById(R.id.b4);
+		no5 = (Button) findViewById(R.id.b5);
+		no6 = (Button) findViewById(R.id.b6);
+		no7 = (Button) findViewById(R.id.b7);
+		no8 = (Button) findViewById(R.id.b8);
+		no9 = (Button) findViewById(R.id.b9);
+		no0 = (Button) findViewById(R.id.b0);
+
+		no1.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View arg0) {
-			String unlocker = unlock.getText().toString();
-			String Browser = sec.getString("browser", "");	
-			String camera = sec.getString("camera", "");
-				if(X==1){
-					
-					if(unlocker.equals(pass)){
-						
-					 if(unlocker.equals(pass)){
-						 finish();
-					 }else if (unlocker.equals(pass) && Browser.equals("true") ){
-						 
-							Uri uri = Uri.parse("http://www.google.com");
-							Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-							startActivity(intent);
-							
-							save("browser","");
-							
-							finish();	
-						 
-					 }else if(unlocker.equals(pass) && camera.equals("true")){
-						 
-						 Intent intent = new Intent(
-									"android.media.action.IMAGE_CAPTURE");
-							startActivityForResult(intent, 0);	
-							save("camera","");
 
-							finish();	
+				unlock.setText(unlock.getText() + "1");
 
-							
-					 }
-					}
-					
-				else{
-					
-					Toast.makeText(getApplicationContext(), "Wrong password try again", Toast.LENGTH_SHORT).show();
-					unlock.setText("");
-				}	
-			}
-				else{
-					
-					 unlocker = unlock.getText().toString();
-					 
-					 if(unlocker.equals(pin)){
-							
-							
-						 if(unlocker.equals(pin)){
-							 finish();
-						 }else if (unlocker.equals(pin) && Browser.equals("true") ){
-							 
-								Uri uri = Uri.parse("http://www.google.com");
-								Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-								startActivity(intent);
-								
-								save("browser","");
-								
-								finish();	
-							 
-						 }else if(unlocker.equals(pin) && camera.equals("true")){
-							 
-							 Intent intent = new Intent(
-										"android.media.action.IMAGE_CAPTURE");
-								startActivityForResult(intent, 0);	
-								save("camera","");
-
-								finish();	
-
-								
-						 }						
-					 }
-						
-					else{
-						
-						Toast.makeText(getApplicationContext(), "Wrong PIN try again", Toast.LENGTH_SHORT).show();
-						unlock.setText("");
-					}	
-					
-				}
-			
 			}
 		});
 
+		no2.setOnClickListener(new OnClickListener() {
 
-		
-		
-		if (txt == null ||  txt == ""){
-			
-		}
-		else{
-			text.setText(txt);	
-		}
-	
-		
-		
-		if (color == null || color == ""){
-			
-		}
-		else{
-			
-			col = Integer.parseInt(color);
-			battery.setTextColor(col);
-			Date.setTextColor(col);
-			TextView1.setTextColor(col);
-			text.setTextColor(col);
-	
-	       }
-		
-		
-	
-		
-		if (img != "") {
+			@Override
+			public void onClick(View arg0) {
 
-			bmImg = BitmapFactory.decodeFile(img);
-			BitmapDrawable background = new BitmapDrawable(bmImg);
-			activityRootView.setBackgroundDrawable(background);
+				unlock.setText(unlock.getText() + "2");
 
-		} else if (colorbg != "") {
-			colbg = Integer.parseInt(colorbg);
-			activityRootView.setBackgroundColor(colbg);
+			}
+		});
 
-		}
+		no3.setOnClickListener(new OnClickListener() {
 
-		Calendar c = Calendar.getInstance();
-		SimpleDateFormat sdf;
-		
+			@Override
+			public void onClick(View arg0) {
 
-		sdf = new SimpleDateFormat("d/M/yyyy EE");
-		String date = sdf.format(c.getTime());
-		Date.setText(date);
+				unlock.setText(unlock.getText() + "3");
 
-		registerReceiver(batteryStatusReceiver, new IntentFilter(
-				Intent.ACTION_BATTERY_CHANGED));
+			}
+		});
 
+		no4.setOnClickListener(new OnClickListener() {
 
-		
-		
-		
-		
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "4");
+
+			}
+		});
+
+		no5.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "5");
+
+			}
+		});
+
+		no6.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "6");
+
+			}
+		});
+
+		no7.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "7");
+
+			}
+		});
+
+		no8.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "8");
+
+			}
+		});
+
+		no9.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "9");
+
+			}
+		});
+
+		no0.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlock.setText(unlock.getText() + "0");
+
+			}
+		});
+
+		back.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				String lock = unlock.getText().toString();
+				lock = lock.substring(0, lock.length() - 1);
+				unlock.setText(lock);
+
+			}
+		});
+
+		mHomeKeyLocker = new HomeKeyLocker();
+		mHomeKeyLocker.lock(this);
+
+		unlock.setFilters(new InputFilter[] { new InputFilter.LengthFilter(12) });
+
+		thelock.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				unlocker = unlock.getText().toString();
+
+				if (unlocker.equals(pin)) {
+
+					if (unlocker.equals(pin)) {
+						onCan();
+
+					} else if (unlocker.equals(pin) && browser.equals("true")) {
+
+						Uri uri = Uri.parse("http://www.google.com");
+						Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+						startActivity(intent);
+
+						save("browser", "");
+
+						onCan();
+
+					} else if (unlocker.equals(pin) && camera.equals("true")) {
+
+						Intent intent = new Intent(
+								"android.media.action.IMAGE_CAPTURE");
+						startActivityForResult(intent, 0);
+						save("camera", "");
+
+						onCan();
+
+					} else if (unlocker.equals(pin) && pkg.equals("true")) {
+
+						sv = getIntent().getStringExtra("sv");
+						Intent i = new Intent();
+						i.setClass(getBaseContext(), LockerService.class);
+						startService(i);
+						Intent LaunchIntent = getPackageManager()
+								.getLaunchIntentForPackage(sv);
+						LaunchIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						startActivity(LaunchIntent);
+
+						onCan();
+
+					}
+				}
+
+				else {
+
+					Toast.makeText(getApplicationContext(),
+							"Wrong PIN try again", Toast.LENGTH_SHORT).show();
+					unlock.setText("");
+
+				}
+
+			}
+
+		});
 
 		mainhandler = new Handler() {
 
-			@SuppressLint("SimpleDateFormat")
 			@Override
 			public void handleMessage(Message msg) {
 				super.handleMessage(msg);
 
-				
-				Calendar c = Calendar.getInstance();
-				SimpleDateFormat sdf;
-
-				sdf = new SimpleDateFormat("hh:mm a");
-				String time = sdf.format(c.getTime());
-				TextView1.setText(time);
-
-				sdf = new SimpleDateFormat("d/M/yyyy EE");
-				String date = sdf.format(c.getTime());
-				Date.setText(date);
-
+				Intent closeDialog = new Intent(
+						Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+				sendBroadcast(closeDialog);
 
 			}
 		};
 
 		new Thread(new Runnable() {
 			public void run() {
+
 				while (true) {
 					try {
 
@@ -299,79 +294,48 @@ public class PinActivity extends Activity {
 
 			}
 		}).start();
-
-	}
+		}
+	
 
 	public void loadlock() {
 
-		Servicelock.spf = PreferenceManager.getDefaultSharedPreferences(this);
+		sec = PreferenceManager.getDefaultSharedPreferences(this);
+		pkg = sec.getString("pkg", "false");
 
-		txt = Servicelock.spf.getString("text", "");
-
-		img = Servicelock.spf.getString("img", "");
-
-		color = Servicelock.spf.getString("color", "");
-
-		colorbg = Servicelock.spf.getString("colorbg", "");
-
+		pin = sec.getString("pin", "");
+		browser = sec.getString("browser", "");
+		camera = sec.getString("camera", "");
+		lock = sec.getString("lock", "");
 	}
-	
-	@Override
-	public void onDestroy() {
-		android.os.Process.killProcess(android.os.Process.myPid());
-		super.onDestroy();
-      
 
-		
-	} 
-	
-	
-	BroadcastReceiver batteryStatusReceiver = new BroadcastReceiver() {
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			int level = intent.getIntExtra("level", 0);
-			int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-			boolean batteryCharge = status == BatteryManager.BATTERY_STATUS_CHARGING;
-
-			int chargePlug = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED,
-					-1);
-			boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
-			boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
-
-			if ((acCharge) || (usbCharge) || (batteryCharge)) {
-				battery.setText(level + "% " + "Charging");
-			} else {
-				if (level < 20) {
-					battery.setText(level + "% " + "Low Battery");
-
-				} else {
-					battery.setText(level + "% " + "Battery");
-				}
-
-			}
-
-		}
-	};
-
-	
 	public void save(String key, String value) {
+
 		Editor edit = sec.edit();
 		edit.putString(key, value);
 		edit.commit();
 
 	}
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Override
+	public void onDestroy() {
+		mainhandler.removeCallbacksAndMessages(runnable);
 
+		try {
 
+			System.exit(0);
+
+		} catch (Exception e) {
+
+			android.os.Process.killProcess(android.os.Process.myPid());
+
+		}
+
+		super.onDestroy();
+
+	}
+
+	public void onCan() {
+		startService(new Intent(PinActivity.this, LockerService.class));
+		finish();
+	}
 }

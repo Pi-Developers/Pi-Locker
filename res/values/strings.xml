@@ -6,41 +6,36 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_lock">Lock</string>
     <string name="title_activity_help">Help</string>
-    <string name="about">
-Pi Locker is a simple and fast locksreen replacement with Customizability and Smart Gestures.
-\n\n
-Features :
-\n
-\n-Clean interface
-\n-Light weight
-\n-Ram friendly
-\n-Smooth on low end devices
-\n-Customizable text
-\n-Customizable text color
-\n-Battery percent
-\n-Lockscreen Gestures
-\n-Changeable background image
-\n-Changeable background color
-\n-Emergengy unlock
-\n-Show/Hide statusbar
-\n-Pin security
-\n-Password security
-
-
-\n\n\n
-ChangeLog :
-\n\n
-v3.0
-\n-Fixed onboot start
-\n-Changed font size
-\n-Added Pin and password Security
-\n-Fixed Home button in some devices
-\n-Changed Battery and custom text position
-\n-increased default background transperancy
-\n-Code Cleaned
-\n-Removed unused recources
-\n-added text limiter in password
-</string>
+     <string name="device_admin">Pi Locker Device Admin</string>
+     <string name="device_admin_description">This is used to get access to some special permissions in device, for example turn off screen.</string>
+    <string name="admin_explanation">after enabling user will be able to use all the special features in Pi locker.</string>
+        
+    <string name="about">About</string>
     <string name="title_activity_pin">MainActivity</string>
-
+    <string name="title_activity_pattern">Pattern</string>
+   <string name="general">  General</string>
+    <string name="misc">Miscellaneous</string>
+    <string name="security">Security</string>
+    <string name="settings">Settings</string>
+    <string name="toggle_pilocker">Toggle PiLocker</string>
+    <string name="seu">Secret Emergency unlock</string>
+    <string name="skip_gestures_on_security">Skip gestures on security</string>
+    <string name="double_tap_to_sleep">Double tap to sleep</string>
+    <string name="lock_now">"  Lock Now"</string>
+    <string name="_set_password">"  Set Password"</string>
+    <string name="set_pincode">"  Set Pincode"</string>
+    <string name="reset_pin_password">"  Reset Pin"</string>
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="_set_background">"  Set Background"</string>
+    <string name="_set_lockscreen_text">"  Set Lockscreen text"</string>
+    <string name="_set_theme_color">"  Set Theme Color"</string>
+    <string name="_about_pi_locker">"  About Pi Locker"</string>
+    <string name="_about_pi_developers">"  About Pi-Developers"</string>
+    <string name="_donaate_to_pi_developers">"  Donate to Pi-Developers"</string>
+    <string name="blur">Add Blur to Lockscreen</string>
+    <string name="_help">"  Help"</string>
+    <string name="_sdcard_pilocker_wallpaper_png">/sdcard/pilocker_wallpaper.PNG</string>
+    <string name="invisible_gestures">Invisible Gestures</string>
+    <string name="_shortcut">"  Shortcut"</string>
 </resources>

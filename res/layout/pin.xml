@@ -3,48 +3,148 @@
     android:id="@+id/activityRoot"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-     >
+    android:background="#59000000" >
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/b2"
+        android:layout_alignBottom="@+id/b2"
+        android:layout_alignRight="@+id/pin"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="3"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+         android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/b4"
+        android:layout_alignBottom="@+id/b4"
+        android:layout_alignRight="@+id/b2"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="5"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+         android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/b5"
+        android:layout_alignBottom="@+id/b5"
+        android:layout_alignRight="@+id/b3"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="6"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_below="@+id/b1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="4"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+         android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/b7"
+        android:layout_alignBottom="@+id/b7"
+        android:layout_alignLeft="@+id/b5"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="8"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+         android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b0"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/b8"
+        android:layout_below="@+id/b8"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="0"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+         android:fontFamily="sans-serif-thin" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_alignLeft="@+id/pin"
-        android:layout_alignRight="@+id/pin"
-        android:layout_below="@+id/pin"
-        android:layout_marginTop="112dp"
-        android:background="#8Cd3d3d3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/b7"
+        android:layout_alignTop="@+id/b0"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
         android:text="Unlock"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/b0"
+        android:layout_alignLeft="@+id/b6"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="9"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/b9"
+        android:layout_alignTop="@+id/b0"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="X"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+       android:fontFamily="sans-serif-thin" />
 
     <EditText
         android:id="@+id/pin"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="160dp"
-        android:background="#26c0c0c0"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberPassword" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/textView1"
-        android:gravity="center"
-        android:text="0/0/0000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="#00000000"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="numberPassword"
         android:textColor="#ffffff"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+         android:fontFamily="sans-serif-thin" >
+
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/textView1"
@@ -52,45 +152,54 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="00:00"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Enter Your Pin"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
-        android:textSize="54sp" />
+            android:textSize="25sp"
+        android:fontFamily="sans-serif-thin" />
 
-    <TextView
-        android:id="@+id/texts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/pin"
-        android:layout_below="@+id/date"
-        android:layout_marginTop="5sp"
-        android:text="Pi Locker"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/battery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/texts"
-        android:layout_alignBottom="@+id/texts"
-        android:layout_alignLeft="@+id/pin"
-        android:layout_marginTop="5sp"
-        android:text="0% Battery"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/b1"
+        android:layout_alignBottom="@+id/b1"
         android:layout_centerHorizontal="true"
-        android:background="#4D000000" />
+        android:background="@drawable/pin1"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="2"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+       android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/pin"
+        android:layout_below="@+id/pin"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="1"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-thin" />
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/b4"
+         android:layout_marginTop="10dp"
+        android:layout_below="@+id/b4"
+        android:background="@drawable/selector"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="7"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-thin" />
 
 </RelativeLayout>

@@ -1,0 +1,6 @@
+Change logs
+ Contributed by AndroidFire
+-Fixed Major Bug 
+-Refining Layout 
+-Removed switching between full and hide Status bar
+-Stabling Pin and Password Alert Dialog

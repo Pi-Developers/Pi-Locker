@@ -13,17 +13,24 @@ import android.widget.FrameLayout;
 
 
 public class HomeKeyLocker {
+	
     private OverlayDialog mOverlayDialog;
     
 
     public void lock(Activity activity) {
+    	
         if (mOverlayDialog == null) {
+        	
             mOverlayDialog = new OverlayDialog(activity);
+
+            mOverlayDialog.show();
+
             mOverlayDialog.show();
         }
     }
 
     public void unlock() {
+    	
         if (mOverlayDialog != null) {
             mOverlayDialog.dismiss();
             mOverlayDialog = null;
@@ -33,7 +40,9 @@ public class HomeKeyLocker {
     private static class OverlayDialog extends AlertDialog {
 
         public OverlayDialog(Activity activity) {
-            super(activity, R.style.OverlayDialog);
+        	
+            super(activity, R.style.Dialog_Fullscreen);
+            
             WindowManager.LayoutParams params = getWindow().getAttributes();
             params.type = TYPE_SYSTEM_ALERT;
             params.dimAmount = 0.0F; 
@@ -44,17 +53,23 @@ public class HomeKeyLocker {
             getWindow().setFlags(FLAG_SHOW_WHEN_LOCKED | FLAG_NOT_TOUCH_MODAL , 0xffffff);
             setOwnerActivity(activity);
             setCancelable(false);
+            
+            
         }
 
-        public final boolean dispatchTouchEvent(MotionEvent motionevent) {
-            return true;
-        }
+        public final boolean dispatchTouchEvent(MotionEvent motionevent) { return true; }
 
         protected final void onCreate(Bundle bundle) {
+        	
             super.onCreate(bundle);
+            
             FrameLayout framelayout = new FrameLayout(getContext());
             framelayout.setBackgroundColor(0);
             setContentView(framelayout);
+            
         }
+
+        
+        
     }
 }

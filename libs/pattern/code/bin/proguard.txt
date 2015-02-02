@@ -1,0 +1,6 @@
+# view res/layout/alp_lock_pattern_view.xml #generated:18
+-keep class group.pals.android.lib.ui.lockpattern.widget.LockPatternView { <init>(...); }
+
+# view v14\res/layout-v14/alp_lock_pattern_view.xml #generated:18
+-keep class group.pals.android.lib.ui.lockpattern.widget.LockPatternView_v14 { <init>(...); }
+
