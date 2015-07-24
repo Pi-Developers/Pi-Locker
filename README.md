@@ -3,6 +3,8 @@ Pi-Locker
 
 **A smart and clean lockscreen replacement for android with unlocking gestures**
         
+        
+  ![alt tag](http://s2.postimg.org/ng1k5z4pl/pi_locker_header.png)
 
 
 **Intrdouction :**
