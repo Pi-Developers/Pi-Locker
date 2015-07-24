@@ -6,12 +6,11 @@ Pi-Locker
   ![alt tag](http://s2.postimg.org/ng1k5z4pl/pi_locker_header.png)
 
 
-Intrdouction :
+**Intrdouction :**
 
->>There is a punch of lockscreens for android Devices, but only little  have the simplicity + awesome features,
->>so we decided to save the world and create this lockscreen replacement.
->>This is not a coffee machine or your dishwasher,
->> just an innovative lockscreen project that is still developing and will grow by time 
+There is a punch of lockscreens for android Devices, but only little  have the simplicity + awesome features,
+so we decided to save the world and create this lockscreen replacement.
+This is not a coffee machine or your dishwasher,just an innovative lockscreen project that is still developing and will grow by time 
 
 
 
