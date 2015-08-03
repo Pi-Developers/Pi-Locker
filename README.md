@@ -7,6 +7,11 @@ Pi-Locker
   ![alt tag](http://s2.postimg.org/ng1k5z4pl/pi_locker_header.png)
 
 
+
+
+**Current version : 5.0.3**
+
+
 **Intrdouction :**
 
 There is a punch of lockscreens for android Devices, but only little  have the simplicity + awesome features,
