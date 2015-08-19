@@ -23,13 +23,15 @@ import com.pilockerstable.LockerService;
 import com.pilockerstable.PinActivity;
 
 public class ShortcutView extends LinearLayout {
-	private int CAPACITY = 4;
+	private int CAPACITY = 0;
 	private PackageManager pm;
 	SharedPreferences sec;
 	String pkg,pin;
 	public ShortcutView(final Context context, AttributeSet attrs) {
 		super(context, attrs);
 		pm = context.getPackageManager();
+		
+		getResources().getInteger(R.integer.shortcut_capacity);
 		
 		sec = PreferenceManager.getDefaultSharedPreferences(getContext());
 
