@@ -21,8 +21,12 @@ import android.widget.TextView;
 
 import com.pilockerstable.LockerService;
 import com.pilockerstable.PinActivity;
-
+/**
+ * generally we put package name in the settings then we load according to capacity
+ * length then we put the value in Shortcutter then we add one by one
+ */
 public class ShortcutView extends LinearLayout {
+	
 	private int CAPACITY = 0;
 	private PackageManager pm;
 	SharedPreferences sec;
