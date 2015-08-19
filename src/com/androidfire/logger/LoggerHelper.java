@@ -1,14 +1,11 @@
 package com.androidfire.logger;
 
-/**
-*  @author AndroidFire
-*  <p>To Log Easily</p>
-*/
-
 import android.content.Context;
 import android.util.Log;
 
-
+/**
+ * This class is made to log easily from other other class
+ */
 public class LoggerHelper {
 	static String name;
 	
