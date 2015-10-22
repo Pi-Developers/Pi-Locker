@@ -21,21 +21,15 @@ import android.widget.TextView;
 
 import com.pilockerstable.LockerService;
 import com.pilockerstable.PinActivity;
-/**
- * generally we put package name in the settings then we load according to capacity
- * length then we put the value in Shortcutter then we add one by one
- */
+
 public class ShortcutView extends LinearLayout {
-	
-	private int CAPACITY = 0;
+	private int CAPACITY = 4;
 	private PackageManager pm;
 	SharedPreferences sec;
 	String pkg,pin;
 	public ShortcutView(final Context context, AttributeSet attrs) {
 		super(context, attrs);
 		pm = context.getPackageManager();
-		
-		getResources().getInteger(R.integer.shortcut_capacity);
 		
 		sec = PreferenceManager.getDefaultSharedPreferences(getContext());
 
@@ -54,21 +48,28 @@ public class ShortcutView extends LinearLayout {
 				Settings.System.putString(context.getContentResolver(), "PiSC"+b, "com.pilockerstable");
 			}
 			sv = s;
-
+			ShortCut sc = new ShortCut(context, attrs);
+			
 			try {
 				ai = pm.getApplicationInfo(sv, 0);
 			} catch (NameNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				
 			}
-			ShortCut sc = new ShortCut(context, attrs);
+			
+			try{
 			String App_Name = (String) pm.getApplicationLabel(ai);
 			Drawable Icon = pm.getApplicationIcon(ai);
 			Shortcutter st = new Shortcutter(App_Name, Icon);
 			sc.setName(st.getName());
-			sc.setImage(st.getIcon());
-
+			sc.setImage(st.getIcon());			
 			addView(sc);
+			
+			}catch(Exception e){
+				Settings.System.putString(context.getContentResolver(), "PiSC"+b, "com.pilockerstable");
+			}
+			
 			sc.setOnClickListener(new View.OnClickListener() {
 				
 				String sv = Settings.System.getString( context.getContentResolver(), "PiSC" + b);
@@ -86,7 +87,7 @@ public class ShortcutView extends LinearLayout {
 						context.startActivity(LaunchIntent);
 						
 						
-					} else{
+					}else{
 					
 					save("pkg", "true");
 					Intent x = new Intent(getContext(), PinActivity.class);
@@ -118,76 +119,96 @@ public class ShortcutView extends LinearLayout {
 		public ShortCut(Context context, AttributeSet attrs) {
 			super(context, attrs);
 			
+			setOrientation(LinearLayout.VERTICAL);
+			setGravity(Gravity.CENTER_HORIZONTAL);
+			icon = new ImageView(context);
+			name = new TextView(context);
 			
 			
 			double density = getResources().getDisplayMetrics().density;
+			
+			
 			if (density >= 4.0) {
 			   //"xxxhdpi";
-				pro = new LayoutParams(150, 150);
+				pro = new LayoutParams(250, 250);
+				icon.setPadding(15, 30, 15, 15);
+
 				
 			}
+			
+			
 			if (density >= 3.0 && density < 4.0) {
 			   //xxhdpi
-				pro = new LayoutParams(120, 120);
+				pro = new LayoutParams(200, 200);
+				icon.setPadding(12, 20, 12, 12);
+				name.setTextSize(17);
+
 			}
+			
+			
 			if (density >= 2.0) {
+				
 			   //xhdpi
-				pro = new LayoutParams(110, 110);
+				pro = new LayoutParams(150, 150);
+				icon.setPadding(10, 18, 10, 10);
+				name.setTextSize(14);
+
 			}
+			
+			
 			if (density >= 1.5 && density < 2.0) {
+				
 			   //hdpi
-				pro = new LayoutParams(85, 85);
+				pro = new LayoutParams(100, 100);
+				icon.setPadding(10, 18, 10, 10);
+				name.setTextSize(12);
+
 			}
 			if (density >= 1.0 && density < 1.5) {
+				
 			   //mdpi
 				pro = new LayoutParams(65, 65);
+				icon.setPadding(10, 18, 10, 10);
+				name.setTextSize(10);
+
 				
 			}
 			
 			if(density >= 0.75 && density < 1.0){
 				//ldpi
 				pro = new LayoutParams(40, 40);
+				icon.setPadding(5, 9, 5, 5);
+				name.setTextSize(10);
+
 			}
 			
 			
 			
-			setOrientation(LinearLayout.VERTICAL);
-			icon = new ImageView(context);
-			icon.setPadding(5, 5, 5, 5);
+		
 			icon.setLayoutParams(pro);
-			name = new TextView(context);
+			addView(icon);
+
+			
 			name.setTextSize(10);
 			name.setTextColor(Color.WHITE);
 			name.setGravity(Gravity.CENTER_HORIZONTAL);
-			addView(icon);
 			addView(name);
+			
 		}
 
+		
 		public void setName(String named) {
 			name.setText(named);
 		}
 
+		
 		public void setImage(Drawable d) {
 			icon.setImageDrawable(d);
 		}
+		
+		
 
 	}
 
-	class Shortcutter {
-		String App_Name;
-		Drawable Icon;
 
-		public Shortcutter(String name, Drawable d) {
-			this.App_Name = name;
-			this.Icon = d;
-		}
-
-		public Drawable getIcon() {
-			return Icon;
-		}
-
-		public String getName() {
-			return App_Name;
-		}
-	}
 }

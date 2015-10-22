@@ -6,14 +6,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_lock">Lock</string>
     <string name="title_activity_help">Help</string>
-     <string name="device_admin">Pi Locker Device Admin</string>
-     <string name="device_admin_description">This is used to get access to some special permissions in device, for example turn off screen.</string>
+    <string name="device_admin">Pi Locker Device Admin</string>
+    <string name="device_admin_description">This is used to get access to some special permissions in device, for example turn off screen.</string>
     <string name="admin_explanation">after enabling user will be able to use all the special features in Pi locker.</string>
-        
     <string name="about">About</string>
     <string name="title_activity_pin">MainActivity</string>
     <string name="title_activity_pattern">Pattern</string>
-   <string name="general">  General</string>
+    <string name="general">  General</string>
     <string name="misc">Miscellaneous</string>
     <string name="security">Security</string>
     <string name="settings">Settings</string>
@@ -35,7 +34,9 @@
     <string name="_donaate_to_pi_developers">"  Donate to Pi-Developers"</string>
     <string name="blur">Add Blur to Lockscreen</string>
     <string name="_help">"  Help"</string>
-    <string name="_sdcard_pilocker_wallpaper_png">/sdcard/pilocker_wallpaper.PNG</string>
+    <string name="_sdcard_pilocker_wallpaper_png">/pilocker_wallpaper.PNG</string>
     <string name="invisible_gestures">Invisible Gestures</string>
     <string name="_shortcut">"  Shortcut"</string>
+    <string name="title_activity_about">About</string>
+
 </resources>

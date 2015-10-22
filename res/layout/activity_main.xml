@@ -14,18 +14,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
+                android:layout_marginTop="3dp"
                 android:background="#ffffff"
                 android:gravity="fill_vertical"
                 android:text="   General"
-                android:layout_marginTop="3dp"
                 android:textColor="#00BCD4"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <CheckBox
@@ -63,9 +63,19 @@
                 android:id="@+id/checkBox4"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
                 android:layout_marginLeft="15dp"
                 android:button="@drawable/selector3"
                 android:text=" Double Tap To Sleep"
+                android:textColor="#000000" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:button="@drawable/selector3"
+                android:text=" Auto-Unlock Pin"
                 android:textColor="#000000" />
 
             <TextView
@@ -139,60 +149,38 @@
                 android:id="@+id/background"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="left|fill_vertical"
                 android:background="@drawable/selector2"
+                android:gravity="left|fill_vertical"
                 android:text="     Set Background"
                 android:textColor="#000000" />
 
             <Button
                 android:id="@+id/screentext"
                 android:layout_width="match_parent"
-              android:layout_height="50dp"
-                android:gravity="left|fill_vertical"
+                android:layout_height="50dp"
                 android:background="@drawable/selector2"
+                android:gravity="left|fill_vertical"
                 android:text="     Set personal Text"
                 android:textColor="#000000" />
 
             <Button
                 android:id="@+id/screentextcolor"
                 android:layout_width="match_parent"
-            android:layout_height="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/selector2"
                 android:gravity="left|fill_vertical"
-                android:background="#00000000"
                 android:text="     Set Theme Color"
                 android:textColor="#000000" />
 
             <Button
                 android:id="@+id/shortcut"
                 android:layout_width="match_parent"
-          android:layout_height="50dp"
-                android:gravity="left|fill_vertical"
-                android:background="@drawable/selector2"
-                android:text="     Set Shortcut"
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:background="#ffffff"
-                android:gravity="fill_vertical"
-                android:text="   About"
-                android:textColor="#00BCD4"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-
-            <Button
-                android:id="@+id/aboutpi"
-                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/selector2"
-                android:gravity="left|fill"
-                android:text="     About Pi Developers"
+                android:gravity="left|fill_vertical"
+                android:text="     Set Shortcut"
                 android:textColor="#000000" />
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

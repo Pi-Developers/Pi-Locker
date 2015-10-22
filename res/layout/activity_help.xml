@@ -4,78 +4,55 @@
     android:layout_height="fill_parent"
     android:background="#ffffff" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/button1"
-        android:fillViewport="true"
-        android:scrollbars="none"
-       >
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="4dp"
-                android:gravity="left"
-                android:text="Welcome to Pi locker!\n\nThis is one of the most advanced lockscreens here, all this features are just a start to a great lockscreen project.\n\nPi Locker is light,Fast,Customizable lockscreen, and loaded with features:\n\n-iOS7 like pin security\n-Cyanogenmod lockscreen gestures\n-Galaxy Touchwiz shortcuts\n-Galaxy Touchwiz personal text\n-Colorable lockscreen\n-Emergengy unlock\n-Changable background\n-Battery percentage\nand even more...\n\nNote : To get the shortcuts,swipe the clock text to left.\n\nGestures Guide:\nGestures are the key feature of this app, to use them you need to know what are the built-in functions in the gestures system.\nWe offer now 9 gestures:\n\n1.Unlock:\nTo unlock draw a check sign on the screen like this &apos;✓&apos;\n\n2.Browser:\nTo launch you defult browser draw an &apos;X&apos; sign\n\n3.Camera:\nTo start camera app Draw letter &apos;C&apos;\n\n4.Torch:\nTo toggle phone torch(if found) draw a &apos;t&apos; sign.\n\n5.Bluetooth:\nTo toggle bluetooth draw letter &apos;b&apos;.\n\n6.Wi-Fi:\nTo toggle wifi draw a &apos;W&apos;.\n\n7.General sound mode:\nTo change audio to general draw a &apos;G&apos;.\n\n8.Silent mode:\nTo toggle to silent mode draw a &apos;S&apos;.\n\n9.Vibration mode:\nTo toggle to vobration mode draw a &apos;V&apos;.\n\n\n"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:gravity="left"
-                android:text="Graphical guide of gestures for illustration : "
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_weight="28.52"
-                android:gravity="left"
-                android:src="@drawable/untitled" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginBottom="4dp"
-                android:gravity="left"
-                android:text="Hope you enjoy this experience we are trying to introduce,and have a good day"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
-                android:textStyle="normal" />
-        </LinearLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/selector4"
-        android:text="Ok, I understood"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="Welcome to Pi locker!\n\nThis is a detailed guide to the features and everything about the app.\n\nPi Locker is :\n- Light\n- Fast\n- Customizable\n- Loaded with features\n\nMain Features: \n- iOS8-like pin security\n- Cyanogenmod lockscreen gestures\n- Galaxy Touchwiz shortcuts\n- Galaxy Touchwiz personal text\n- Colorable lockscreen\n- Emergengy unlock\n- Changable background\n- Battery percentage\n- Get Missed Calls\n- Get Wifi/Bluetooth State\n- Own Statusbar\n- And even more...\n\nNote : To get the shortcuts,swipe the clock text to left.\n\nGestures Guide:\n\nGestures are the key feature of this app, to use them you need to know what are the built-in functions in the gestures system.\nWe offer now 9 gestures:\n\n1.Unlock:\nTo unlock draw a check sign on the screen like this &apos;✓&apos;\n\n2.Browser:\nTo launch you defult browser draw an &apos;X&apos; sign\n\n3.Camera:\nTo start camera app Draw letter &apos;C&apos;\n\n4.Torch:\nTo toggle phone torch(if found) draw a &apos;t&apos; sign.\n\n5.Bluetooth:\nTo toggle bluetooth draw letter &apos;b&apos;.\n\n6.Wi-Fi:\nTo toggle wifi draw a &apos;W&apos;.\n\n7.General sound mode:\nTo change audio to general draw a &apos;G&apos;.\n\n8.Silent mode:\nTo toggle to silent mode draw a &apos;S&apos;.\n\n9.Vibration mode:\nTo toggle to vobration mode draw a &apos;V&apos;.\n\n\n"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector4"
+                    android:text="Ok, I understood"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+              
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector4"
+                    android:text="Open Notification Access"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </RelativeLayout>

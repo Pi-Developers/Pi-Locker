@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="About Pi Locker"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="\nMost lockscreens look the same, but pi locker doesn&apos;t\nBy combinig the best features of every system&apos;s lock, we made this lockscreen that is informative,innovative,cusstomizable yet easy to use.\nyou will detach your current lock for this :D\n\n\nFeatures:\n\n
+\n✓ Clean interface
+\n✓ Light weight
+\n✓ Ram friendly
+\n✓ Smooth on low end devices
+\n✓ Customizable text
+\n✓ Customizable text color
+\n✓ Battery percent
+\n✓ Lockscreen Gestures
+\n✓ Changeable background image
+\n✓ Changeable background color
+\n✓ Emergency unlock
+\n✓ Material design
+\n✓ Pin security
+\n✓ Customizable theme color
+\n✓ Double tap to sleep
+\n✓ Skip gestures on security
+\n✓ Custom Shortcuts
+\n✓ Missed calls counter
+\n✓ Unread Messages Count
+\n✓ Pin Auto-unlock\n\nThis app is open sourced and signed under GNU Public License\n\nCurrent Version 6.0.1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textVifew3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="About Pi Developers"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Creativity is our middle name.
+\n\nA tech developmnt team \nWe are Egyptians, a group of teenagers with vision and mind. we want to make computer (PC, mobile..etc) users usage better and easier by offering new solutions. 
+\n\n- What is our goal ? 		
+\nWe were born to innovate, not to copy others. We follow this slogan as it is the bible, since our launch we have been creating ideas, or refining others, we will not settle for normal when we can reach for the stars.
+\n\n- Our philosophy ?
+\nTo reach the greatest potential with your device and make you -the user- satisfied.by using our solutions, your life will be better.User comes first, all this work is for you, and every person is potentially a user, so you all matter to us.We work for you. 
+\n\n- Why to use our apps ?
+\nBy using our apps, if not for their awesomeness , you are supporting youth to create and show their minds, everyone deserves to think, and that is how we think.
+\n\n- I love your work, How can I support you? 
+\nYou can support us by simply by sharing our work and downloading it, you can donate soon too.
+\n\n- Why do you think you are different ?
+\nWe love what we do, simple.
+\n\nTeam members:
+\n\n- Mohamed Rashad
+\n- Mahmoud Saleh
+\n- Ahmad Sameh
+\n- Mostafa Samy
+\n- Mohamed Ashraf
+\n- Yassmin Gouda
+\n- Mahmoud El-Tarouty
+\n- Mostafa Amr
+\n- Israa Shams
+\n- Sahid Almas
+\n- Mohamed El Sayed
+\n- Mohamed Alaa
+\n- Omar Nasser
+\n\n\nCheck our wesbite : Pi-Developers.com
+\nFollow us on Twitter : @Pi_Developers
+\nCheck our blog : blog.pi-developers.com"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

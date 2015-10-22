@@ -5,6 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.GestureDetector;
 import android.widget.FrameLayout;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 
@@ -31,21 +32,30 @@ import android.util.AttributeSet;
         super(context, attrs);
         mCurrentView = 0;
         mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                                       float velocityY) {
+        	
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                	
                     int dx = (int) (e2.getX() - e1.getX());
 
                     // don't accept the fling if it's too short
                     // as it may conflict with a button push
                     if (Math.abs(dx) > MAJOR_MOVE && Math.abs(velocityX) > Math.abs(velocityY)) {
+                    	
                         if (velocityX > 0) {
+                        	
                             moveRight();
+                            
                         } else {
+                        	
                             moveLeft();
                         }
+                        
                         return true;
+                        
                     } else {
+                    	
                         return false;
+                        
                     }
                 }
             });
@@ -57,13 +67,17 @@ import android.util.AttributeSet;
     }
 
     private void updateCurrentView() {
+    	
         for (int i = mChildren.length-1; i >= 0 ; --i) {
+        	
             mChildren[i].setVisibility(i==mCurrentView ? View.VISIBLE : View.GONE);
+            
         }
     }
 
     @Override 
     public void onSizeChanged(int w, int h, int oldW, int oldH) {
+    	
         mWidth = w;
         inLeft   = new TranslateAnimation(mWidth, 0, 0, 0);
         outLeft  = new TranslateAnimation(0, -mWidth, 0, 0);        
@@ -74,6 +88,7 @@ import android.util.AttributeSet;
         outLeft.setDuration(ANIM_DURATION);
         inRight.setDuration(ANIM_DURATION);
         outRight.setDuration(ANIM_DURATION);
+        
     }
 
     protected void onFinishInflate() {
@@ -85,6 +100,7 @@ import android.util.AttributeSet;
         updateCurrentView();
     }
 
+    @SuppressLint("ClickableViewAccessibility") 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         mGestureDetector.onTouchEvent(event);
@@ -97,6 +113,7 @@ import android.util.AttributeSet;
     }
 
     void moveLeft() {
+    	
         //  <--
         if (mCurrentView < mChildren.length - 1 && mPreviousMove != LEFT) {
             mChildren[mCurrentView+1].setVisibility(View.VISIBLE);
@@ -109,9 +126,12 @@ import android.util.AttributeSet;
         }
     }
 
+    
     void moveRight() {
+    	
         //  -->
         if (mCurrentView > 0 && mPreviousMove != RIGHT) {
+        	
             mChildren[mCurrentView-1].setVisibility(View.VISIBLE);
             mChildren[mCurrentView-1].startAnimation(inRight);
             mChildren[mCurrentView].startAnimation(outRight);
@@ -123,6 +143,9 @@ import android.util.AttributeSet;
     }
 
     int getCurrentIndex() {
+    	
         return mCurrentView;
+        
     }
+    
 }

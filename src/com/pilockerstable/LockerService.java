@@ -9,10 +9,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-
-import com.androidfire.logger.LoggerHelper;
 
 /**
  * @author AndroidFire and SpaceCaker
@@ -22,49 +21,61 @@ import com.androidfire.logger.LoggerHelper;
 @SuppressWarnings("deprecation")
 public class LockerService extends Service {
 
+	
 	static SharedPreferences spf;
-	int mStatus;
-	KeyguardLock mKeyguardLock;
 	static Context c;
+	int mStatus;
+	String on;
+	KeyguardLock mKeyguardLock;
 
-	/**
-	 * <p>
-	 * Methods of onBind Not Important for LockerService
-	 * </p>
-	 */
+	
 	@Override
 	public IBinder onBind(Intent arg0) {
 
 		return null;
+		
 	}
 
+   @Override
+   public int onStartCommand(Intent intent, int flags, int startId) {
+
+	        return START_STICKY;
+	    }
+
+	
 	/**
-	 * <p>
+	 * 
 	 * mStaus is Variable of int we need to find status of locker to make it
-	 * enable or disable {@link onCreate}{@link mStatus}
-	 * </p>
-	 */
+	 * enable or disable 
+	 * 
+	 **/
 	
 	@Override
 	public void onCreate() {
 
-		LoggerHelper.dg(getBaseContext(), "Pi Locker Service has Started");
 
-		mStatus = Settings.System.getInt(getBaseContext().getContentResolver(),
-				"PiLocker", 0);
+		mStatus = Settings.System.getInt(getBaseContext().getContentResolver(),"PiLocker", 0);
 
 		if (mStatus == 0) {
+			
 			stopSelf();
-			LoggerHelper.er(getBaseContext(), "Pi Locker is Disabled");
 			return;
+			
 		}
+		
 		if (mStatus == 1) {
+			
 			try {
+				
 			mKeyguardLock = ((KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE)).newKeyguardLock("PiLocker");
 			mKeyguardLock.disableKeyguard();
+			
 			IntentFilter intentFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
-			intentFilter.setPriority(999);
+			             intentFilter.setPriority(999);
+			
             registerReceiver(mReceiver, intentFilter);
+            
+            
 			} catch (Exception e) {
 
 				unregisterReceiver(mReceiver);
@@ -73,36 +84,56 @@ public class LockerService extends Service {
 			
 		} else if (mStatus == 0) {
 
+			try {
+
 			unregisterReceiver(mReceiver);
 			mKeyguardLock.reenableKeyguard();
 			
+			
+			} catch(Exception e){
+				
+				e.printStackTrace();
+				
+			}
+			
 		}
-		registerReceiver(mRestore, new IntentFilter("com.androidfire.Restore_Pi"));
+		
+		try{
+			
+			registerReceiver(mRestore, new IntentFilter("com.androidfire.Restore_Pi"));
+
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
 	}
 
+	
 	private BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			TelephonyManager ts = (TelephonyManager) context
-					.getSystemService(Context.TELEPHONY_SERVICE);
+			
+			TelephonyManager ts = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 
 			int callState = ts.getCallState();
+			
 			if (callState == TelephonyManager.CALL_STATE_IDLE) {
 
-				startActivity(new Intent(LockerService.this, Lock.class)
-						.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+				startActivity(new Intent(LockerService.this, Lock.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
-				LoggerHelper.dg(getBaseContext(), "Locker Service Has Started");
 			}
 
 		}
 
 	};
+	
 	private BroadcastReceiver mRestore = new BroadcastReceiver() {
 
-		@Override
+		@Override	
 		public void onReceive(Context context, Intent intent) {
+			
 			try{
 				
 			unregisterReceiver(mReceiver);
@@ -110,17 +141,19 @@ public class LockerService extends Service {
 			
 			}catch(Exception e){
 				
-				
+				e.printStackTrace();
 			}
 		}
 
 	};
 
+	
 	/**
-	 * <p>
+	 * 
 	 * Methods to Destroy service any time
-	 * </p>
-	 */
+	 * 
+	 **/
+	
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
@@ -128,7 +161,24 @@ public class LockerService extends Service {
 
 	@Override
 	public void onDestroy() {
+		
 		super.onDestroy();
+		
+		
+		/**
+		 * 
+		 * make sure service still running 
+		 *
+		 */
+		spf = PreferenceManager.getDefaultSharedPreferences(this);
+		on = spf.getString("on", "true");
+		
+		if(on.equals("true")){
+			
+			startService(new Intent(LockerService.this , LockerService.class));
+			
+		}
+	
 
 	}
 

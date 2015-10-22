@@ -79,6 +79,6 @@ theme attribute (in the form
 containing a value of this type.
           @attr name yuku.ambilwarna:supportsAlpha
         */
-        public static int AmbilWarnaPreference_supportsAlpha = 0;
+        public static final int AmbilWarnaPreference_supportsAlpha = 0;
     };
 }

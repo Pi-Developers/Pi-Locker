@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="DefaultLocale">
+        <ignore path="src/com/pilockerstable/Lock.java" />
+    </issue>
     <issue id="HardcodedText" severity="ignore" />
     <issue id="NewApi" severity="ignore" />
     <issue id="UselessParent" severity="ignore" />
