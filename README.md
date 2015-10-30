@@ -16,15 +16,20 @@ Pi-Locker
 
 There is a punch of lockscreens for android Devices, but only little  have the simplicity + awesome features,
 so we decided to save the world and create this lockscreen replacement.
-This is not a coffee machine or your dishwasher,just an innovative lockscreen project that is still developing and will grow by time..
+This is not a coffee machine or your dishwasher,just an innovative lockscreen project that is still developing.
+
 
 **About Project :**
 
-This is a result of combiining the best of each lockscreen in the platforms and adding our own touch to get the best lockscreen ever
+This is a result of combinining the best of each lockscreen in the platforms and adding our own touch to get the best lockscreen ever.
 
-Pi Locker is the lowest ram consuming lockscreen ever 
+Pi Locker is the lowest ram consuming lockscreen ever.
 
-Enjoy Our Experience :D
+Enjoy Our Experience.
+
+**Pi locker :**
+
+The only locscreen that is professional and opensourced, you cannot only customize the lockscreen, but fork the code and build your own lockscreen, because you deserve this and we support openness.
 
 
 **Features :**
@@ -59,6 +64,7 @@ Enjoy Our Experience :D
 
 >>-Calls and Messages counter 
 
+>>-Whatsapp Tick notification
 
 
 **This App was features on XDA Developers' portal 2 Times and more websites too.**
