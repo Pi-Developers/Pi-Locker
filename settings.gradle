@@ -1,3 +1,4 @@
 include ':'
-include ':appcompat'
+include ':appcompat', ':pilocker'
 include ':AmbilWarna'
+include ':simple-crop-image-lib'

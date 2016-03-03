@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="#59000000" />
+
+            <com.pilockerstable.PanelSwitcher
+                android:id="@+id/panelSwitcher1"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="60dp" >
+
+                <LinearLayout
+                    android:id="@+id/timeid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center"
+                        android:shadowColor="#c0c0c0"
+                        android:text="00:00"
+                        android:textColor="#ffffff"
+                        android:textSize="70sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="bottom"
+                        android:text=" PM"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <com.almas.ShortcutView
+                    android:id="@+id/shortcutView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center" />
+            </com.pilockerstable.PanelSwitcher>
+
+            <TextView
+                android:id="@+id/texts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="22dp"
+                android:fontFamily="sans-serif"
+                android:text="Pi Locker"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/panelSwitcher1"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="0-0-0000"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="7dp"
+                android:fontFamily="sans-serif"
+                android:text="0%"
+                android:textColor="#ffffff"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/battery"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@+id/battery"
+                android:text="W"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView3"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="sans-serif"
+                android:text="carrier"
+                android:textColor="#ffffff"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView1"
+                android:layout_alignBottom="@+id/textView1"
+                android:layout_marginRight="14dp"
+                android:layout_toLeftOf="@+id/textView1"
+                android:text="B"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView3"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_marginRight="14dp"
+                android:layout_toLeftOf="@+id/textView3"
+                android:text="3G"
+                android:textColor="#ffffff" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/battery"
+                android:layout_below="@+id/date"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayot1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:id="@+id/v1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.58"
+                        android:text="  0 Calls"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="4dp"
+                        android:text="  0 Msgs"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="  No Whatsapp Messages"
+                        android:textColor="#ffffff" />
+
+                    <View
+                        android:id="@+id/v2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#ffffff" />
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:id="@+id/r1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp" >
+                    </TableLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <android.gesture.GestureOverlayView
+                android:id="@+id/gestureOverlayView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/panelSwitcher1"
+                android:gestureColor="#ffffff"
+                android:gestureStrokeType="multiple"
+                android:gestureStrokeWidth="7.0"
+                android:uncertainGestureColor="#ffffff" >
+            </android.gesture.GestureOverlayView>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView4"
+                android:layout_alignBottom="@+id/textView4"
+                android:layout_marginRight="14dp"
+                android:layout_toLeftOf="@+id/textView4"
+                android:text="Normal"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </TableRow>
+
+</TableLayout>
